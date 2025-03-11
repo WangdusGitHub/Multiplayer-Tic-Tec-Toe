@@ -1,0 +1,80 @@
+.game-wrapper {
+    width: var(100% - 4rem);
+    height: 500px;
+    padding: 1rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.board {
+    aspect-ratio: 1/1;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: .7rem;
+
+    padding: 1rem;
+
+    z-index: 1;
+}
+
+.square {
+    height: 100px;
+    aspect-ratio: 1/1;
+    
+    border-radius: var(--BR);
+    background-color: var(--clr2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+
+    animation: down-up .8s;
+
+    transition: .2s;
+
+    font-size: 70px;
+}
+
+.square:hover {
+    transform: scale(1.05);
+}
+
+.players {
+    --padding: 20%;
+    position: absolute;
+    width: calc(100% - var(--padding));
+
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+
+    z-index: 0;
+}
+.players div {
+    background-color: var(--clr2);
+    padding: 1rem;
+    border-radius: var(--BR);
+}
+@media (max-width: 800px) {
+    .players {
+        position: inherit;
+        padding: 2rem;
+    }
+}
+
+.not-allowed {
+    cursor: not-allowed !important;
+}
+
+.finish-state {
+    padding: 1rem;
+}
+
+.highlight-winner-row {
+    background-color: var(--clr3);
+}
