@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function Square({
-  winnerRow,
+  winnerLine,
   setFinishState,
   finishState,
   setGameState,
@@ -38,7 +38,7 @@ export default function Square({
   return (
     <div
       className={`square ${
-        winnerRow.includes(id) ? 'highlight-winner-row' : ""
+        winnerLine.includes(id) ? 'highlight' : ""
       }`}
       onClick={finishState ? null : handleClick}
     >
